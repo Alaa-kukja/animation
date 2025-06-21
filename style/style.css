@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: burlywood;
+  height: 100vh;
+}
+
+.street {
+  height: 25vh;
+  width: 100%;
+  position: relative;
+}
+
+.street img {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+}
+
+.street.street1 .pic,
+.street.street3 .pic {
+  position: absolute;
+  left: calc(100% - 200px);
+  z-index: -1;
+}
+.street.street2 .gif,
+.street.street4 .gif {
+  position: absolute;
+  left: calc(100% - 200px);
+  animation-name: goToHome;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-direction: reverse;
+}
+
+.street.street1 .gif,
+.street.street3 .gif {
+  animation-name: goToHome;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.street.street2 .gif {
+  animation-delay: 4s;
+}
+.street.street3 .gif {
+  animation-delay: 8s;
+}
+.street.street4 .gif {
+  animation-delay: 12s;
+}
+@keyframes goToHome {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 200px);
+  }
+}
